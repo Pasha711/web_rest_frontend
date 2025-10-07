@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Alambique - Тест API</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #products-list { margin-top: 20px; border: 1px solid #ccc; padding: 10px; }
+        .product { border-bottom: 1px solid #eee; padding: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Тестирование API "El Alambique"</h1>
+    <button id="load-products">Загрузити список продуктів</button>
+
+    <div id="products-list">
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#load-products').click(function() {
+                $.ajax({
+                    url: 'http://127.0.0.1:8000/products/',
+                    type: 'GET',
+                    success: function(data) {
+                        console.log('Дані отримані:', data);
+                        $('#products-list').empty();
+
+                        if (data.length === 0) {
+                            $('#products-list').append('<p>Продуктів поки нема. Добавте їх через API.</p>');
+                        } else {
+                            $.each(data, function(index, product) {
+                                $('#products-list').append(
+                                    `<div class="product">
+                                        <strong>${product.name}</strong> (${product.code})
+                                        <p>${product.short_descr}</p>
+                                    </div>`
+                                );
+                            });
+                        }
+                    },
+                    error: function(error) {
+                        console.error('Помилка при запиті:', error);
+                        $('#products-list').html('<p>Не вдалося загрузити продукти. Перевірте, чи запущен сервер Django та правильність налаштувань CORS.</p>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
