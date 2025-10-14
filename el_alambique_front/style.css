@@ -1,0 +1,6 @@
+body { font-family: sans-serif; padding: 20px; }
+nav { background: #f4f4f4; padding: 10px; margin-bottom: 20px; }
+nav a, nav button, nav span { margin-right: 15px; }
+.hidden { display: none; }
+form { display: flex; flex-direction: column; max-width: 300px; gap: 10px; }
+#error-message { color: red; margin-top: 10px; }

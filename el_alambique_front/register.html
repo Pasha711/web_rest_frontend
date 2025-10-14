@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Головна</a>
+    </nav>
+    <main>
+        <h1>Реєстрація</h1>
+        <form id="register-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="text" id="first_name" placeholder="Ім'я (необов'зково)">
+            <input type="text" id="last_name" placeholder="Прізвище (необов'язково)">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <input type="password" id="password_check" placeholder="Повторіть пароль" required>
+            <button type="submit">Зареєструватися</button>
+        </form>
+        <div id="error-message"></div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

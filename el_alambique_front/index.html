@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>El Alambique - Головна</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Головна</a>
+        <a href="profile.html" id="profile-link" class="hidden">Профіль</a>
+        <a href="login.html" id="login-link">Війти</a>
+        <span id="user-info" class="hidden"></span>
+        <button id="logout-btn" class="hidden">Вийти</button>
+    </nav>
+    <main>
+        <h1>Вітаємо в El Alambique!</h1>
+        <p>Це загальнодоступна сторінка. Тут ви можете подивитися наш каталог.</p>
+        <button id="load-products">Загрузити список продуктів</button>
+        <div id="products-list"></div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
